@@ -1,0 +1,67 @@
++module(table)
+    min-width: 100%
+    thead
+        tr
+            padding: $spacing-unit/2 $spacing-unit/2 $spacing-unit/2 25px
+        td
+            font-weight: bold
+            text-align: left
+            text-transform: capitalize
+            font-size: 0.87em
+    tbody
+        tr
+            background-color: $white-color
+            border-radius: 10px
+            // box-shadow: 0 3px 8px 0 rgba(black, .2)
+            box-shadow: 0 6px 12px 0 rgba(black, .1)
+            overflow: hidden
+            margin-bottom: $spacing-unit/2
+            padding: $spacing-unit/2
+            @extend %transition
+            cursor: pointer
+
+            &:hover, &:active, &:focus
+                background-color: $brand-color-light
+
+            &.inactive
+                border-left: 10px solid $danger-color
+
+            &.active
+                border-left: 10px solid $success-color
+
+            &.not-delivered
+                border-left: 10px solid $not-delivered-color
+
+            &.total-delivered
+                border-left: 10px solid $success-color
+
+            td
+                background-color: transparent !important
+                text-align: left
+
+                &:not(:first-child)
+                    white-space: nowrap
+                    text-overflow: ellipsis
+                    overflow: hidden
+
+                .successColor
+                    font-family: $title-font-family
+
+                .dangerColor
+                    font-family: $title-font-family
+
+                .blueColor
+                    font-family: $title-font-family
+
+    +variant(short)
+        tbody
+            tr
+                background-color: transparent
+                border-radius: 0px
+                box-shadow: none
+                overflow: hidden
+                margin-bottom: $spacing-unit/2
+                padding: $spacing-unit/3 0
+                @extend %transition
+                cursor: pointer
+                border-bottom: 1px solid $grey-color

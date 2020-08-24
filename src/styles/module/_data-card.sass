@@ -1,0 +1,48 @@
++module(card)    
+    background-color: $white-color-dark
+    box-shadow: 0 3px 8px 0 rgba(black, .2)
+    border-radius: 10px
+    overflow: hidden
+
+    .container
+        padding: $spacing-unit/2 $spacing-unit
+
+    .message
+        color: $grey-color
+        text-align: center
+
+    .full-btn
+        display: block
+        width: calc(100%)
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
+    +variant(media)
+        padding: 0
+        background-color: $white-color
+        border-radius: 
+        overflow: hidden
+
+        .infos
+            padding: $spacing-unit/3 $spacing-unit/2
+            ul
+                font-size: $small-font-size
+
+        .img-container            
+            background-color: $grey-color-light
+            overflow: hidden
+            max-height: 200px
+
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+                object-position: center
+
+    +variant(table)
+        .container
+            padding: 0
+
+        label
+            display: none
+

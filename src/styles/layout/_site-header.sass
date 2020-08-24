@@ -1,0 +1,170 @@
+header
+    min-height: 48px
+    padding: $spacing-unit/3 0
+    position: sticky
+    z-index: 999
+    top: 0
+    background-color: $white-color
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16)
+    -moz-box-shadow:    0px 3px 6px 0px rgba(0, 0, 0, 0.16)
+    box-shadow:         0px 3px 6px 0px rgba(0, 0, 0, 0.16)
+
+    button.search-btn:hover, button.search-btn:active, button.search-btn:focus
+        background-color: transparent
+
+    +media-query($on-palm)
+        position: fixed
+        z-index: 999
+        width: 100%
+
+    .icon-user
+        border-radius: 100%
+        overflow: hidden
+
+    .notification-icons > *
+        fill: $grey-color;
+        transition: 0.3s ease-in-out;
+
+    .notification-icons:hover > *
+        fill: $grey-color
+
+    .active .notification-icons > *
+        fill: $grey-color            
+
+.site-title
+    float: left
+    line-height: 56px
+    img
+        display: inline-block
+
+.site-nav 
+    // width: 20vw
+    position: sticky
+    top: 0
+    width: 180px
+    height: 100vh
+    line-height: 56px
+    -webkit-box-shadow: 3px 0px 6px 0px rgba(0, 0, 0, 0.16)
+    -moz-box-shadow:    3px 0px 6px 0px rgba(0, 0, 0, 0.16)
+    box-shadow:         3px 0px 6px 0px rgba(0, 0, 0, 0.16)
+    padding: $spacing-unit/2 0
+    @extend %transition
+    overflow: hidden
+
+    .menu-icon
+        float: right
+        height: $spacing-unit/2
+        margin-right: $spacing-unit/2
+        cursor: pointer
+        @extend %transition
+
+        > *
+            @extend %transition
+            fill: $grey-color
+
+        &:hover, &:focus, &:active
+            > *
+                fill: $compl-color
+
+    .avatar
+        padding: 0 $spacing-unit/2
+
+    nav, ul
+        width: 100%
+
+    nav > ul
+        @extend %transition
+        margin-right: -$spacing-unit
+    // li
+    //     margin-bottom: $spacing-unit/3
+    li
+        line-height: 0
+        padding: $spacing-unit/2 $spacing-unit/2 $spacing-unit/2 $spacing-unit/2
+        margin: $spacing-unit/2 0
+        border-top-left-radius: 20px
+        border-bottom-left-radius: 20px
+        @extend %transition
+
+        // &:hover, &:focus, &:active
+        //     background-color: $blue-color
+
+        &:hover, &:focus, &:active
+            background-color: $blue-color-light
+            color: $black-color
+            svg > *
+                fill: $black-color
+
+            a
+                color: $black-color
+                &:hover, &:focus, &:active
+                    color: $black-color
+
+    // li:not(:last-child)
+    //     margin-bottom: $spacing-unit*2
+
+    .title
+        font-family: $title-font-family
+        white-space: nowrap
+        text-overflow: ellipsis
+        @extend %transition
+        opacity: 1
+
+    .page-link
+        white-space: nowrap
+        text-overflow: ellipsis
+        color: $brand-color
+        @extend %transition
+
+        span
+            @extend %transition
+            opacity: 1
+
+        svg
+            margin-right: $spacing-unit/2
+
+        svg > *
+            @extend %transition
+            fill: $brand-color
+
+        &:hover, &:focus, &:active
+            color: $black-color
+            svg > *
+                fill: $black-color
+
+    .nav-icon
+        width: 24px
+        height: 24px
+
+    button
+        width: calc(100% - 30px)
+        margin-bottom: $spacing-unit
+        padding: 0px $spacing-unit/2
+
+    .logo
+        width: 100%
+        padding: 0 $spacing-unit/2
+        text-align: center
+
+        img
+            display: inline-block
+
+    &.closed
+        width: 80px
+
+        .menu-icon
+            > *
+                fill: $compl-color
+
+        .avatar
+            border-radius: 100%
+
+        // nav > ul
+        //     margin-right: -$spacing-unit/2
+
+        .page-link
+            span
+                opacity: 0
+        .title
+            // display: none
+            // font-size: 0
+            opacity: 0

@@ -1,0 +1,334 @@
++module(btn)
+    padding: 5px 15px
+    display: inline-block
+    text-align: center
+    text-transform: uppercase
+    text-decoration: none
+    background-color: $white-color
+    color: $grey-color
+    border: 1px solid $grey-color
+    border-radius: 4px
+    cursor: pointer
+
+    &:hover, &:focus, &:active
+        background-color: $grey-color
+        color: $white-color
+        text-decoration: none
+        box-shadow: 0 3px 8px 0 rgba(black, .5)
+        transform: translateY(-1px)
+
+    &[disabled]
+        border: 1px solid $grey-color !important
+        color: $grey-color !important
+        opacity: 0.4
+        cursor: not-allowed
+
+        &:hover
+            background-color: $grey-color
+            color: $white-color !important
+
+    +variant(inline)
+        color: $brand-color
+        font-family: $title-font-family
+        text-transform: none
+        border: none
+        box-shadow: none
+
+        &:hover, &:focus, &:active
+            background-color: $brand-color
+            color: $white-color
+
+    +variant(success)
+        @extend %success
+
+    +variant(filled-success)
+        background-color: $success-color
+        color: $white-color
+        border: 1px solid $success-color
+
+        svg
+            @extend %svg
+
+            path
+                @extend %transition
+                fill: $white-color
+
+        &:hover, &:focus, &:active
+            color: $white-color;
+            background-color: $compl-color
+            border: 1px solid $compl-color
+
+            svg
+                path
+                    fill: $success-color   
+
+    +variant(icon-success)
+        @extend %success
+
+    +variant(icon-blue)
+        @extend %blue
+
+    +variant(icon-back)
+        border: none
+        padding: 5px 10px
+
+        svg
+            @extend %svg
+
+    +variant(icon-grey)
+        color: $danger-color
+        border: 1px solid transparent
+
+        svg
+            @extend %svg
+
+            path
+                @extend %transition
+                fill: $black-color
+
+        &:hover, &:focus, &:active
+            background-color: $grey-color
+            color: $white-color
+
+            svg
+                path
+                    fill: $white-color
+
+    +variant(icon-inline-danger)
+        color: $danger-color
+        background-color: transparent
+        border: 1px solid transparent
+
+        svg
+            @extend %svg
+
+            path
+                @extend %transition
+                fill: $danger-color
+
+        &:hover, &:focus, &:active
+            border: 1px solid $danger-color
+            background-color: $danger-color
+            color: $white-color
+
+            svg
+                path
+                    fill: $white-color
+
+    +variant(icon-inline-success)
+        color: $success-color
+        background-color: transparent
+        border: 1px solid transparent
+
+        svg
+            @extend %svg
+
+            path
+                @extend %transition
+                fill: $success-color
+
+        &:hover, &:focus, &:active
+            border: 1px solid $success-color
+            background-color: $success-color
+            color: $white-color
+
+            svg
+                path
+                    fill: $white-color            
+
+    +variant(icon-inline-blue)
+        color: $blue-color
+        background-color: transparent
+        border: 1px solid transparent
+
+        svg
+            @extend %svg
+
+            path
+                @extend %transition
+                fill: $blue-color
+
+        &:hover, &:focus, &:active
+            border: 1px solid $blue-color
+            background-color: $blue-color
+            color: $white-color
+
+            svg
+                path
+                    fill: $white-color
+
+    +variant(icon-inline-normal)
+        color: $brand-color
+        background-color: transparent
+        border: 1px solid transparent
+
+        svg
+            @extend %svg
+
+            path
+                @extend %transition
+                fill: $brand-color
+
+        &:hover, &:focus, &:active
+            border: 1px solid $brand-color
+            background-color: $brand-color
+            color: $white-color
+
+            svg
+                path
+                    fill: $white-color
+
+    +variant(icon-plus)
+        color: $success-color
+        border: none
+        border-radius: 100%
+        padding: 5px 10px
+        box-shadow: 0 3px 8px 0 rgba(black, .5)
+
+        svg
+            @extend %svg
+
+            path
+                @extend %transition
+                fill: $success-color
+
+        &:hover, &:focus, &:active
+            background-color: $success-color
+            border: none
+            color: $white-color
+
+            svg
+                path
+                    fill: $white-color
+
+    +variant(icon-minus)
+        color: $danger-color
+        border: none
+        border-radius: 100%
+        padding: 5px 10px
+        box-shadow: 0 3px 8px 0 rgba(black, .5)
+
+        svg
+            @extend %svg
+
+            path
+                @extend %transition
+                fill: $danger-color
+
+        &:hover, &:focus, &:active
+            background-color: $danger-color
+            border: none
+            color: $white-color
+
+            svg
+                path
+                    fill: $white-color
+
+    +variant(danger)
+        color: $danger-color
+        border: 1px solid $danger-color
+
+        &:hover, &:focus, &:active, &.active
+            background-color: $danger-color
+            color: $white-color
+
+    +variant(blue)
+        @extend %blue
+
+    +variant(warning)
+        color: $warning-color
+        border: 1px solid $warning-color
+
+        &:hover, &:focus, &:active, &.active
+            background-color: $warning-color
+            color: $white-color
+
+    +variant(grey)
+        color: $black-color
+        background-color: $grey-color
+        border: 1px solid $grey-color
+
+        &:hover, &:focus, &:active
+            background-color: $black-color
+            border: 1px solid $black-color
+            color: $white-color
+
+    +variant(link)
+        background-color: transparent
+        svg
+            width: $spacing-unit
+            height: $spacing-unit
+            
+            path
+                fill: $compl-color
+
+        &:hover, &:focus, &:active
+            background-color: transparent
+            box-shadow: none
+
+    +variant(icon-clear)
+        padding: 0
+        background-color: transparent
+        border: 0
+
+        svg
+            path        
+                @extend %transition
+                fill: $grey-color
+
+        &:hover, &:active, &:focus
+            background-color: transparent
+            box-shadow: none
+            
+            svg
+                path
+                    fill: $compl-color
+
+    &.ativo
+        color: $white-color
+        text-decoration: none
+        box-shadow: 0 3px 8px 0 rgba(black, .5)
+        transform: translateY(-1px)
+        background-color: $compl-color
+
+%svg
+    width: 16px
+    height: 16px   
+
+%success
+    color: $success-color;
+    border: 1px solid $success-color
+
+    svg
+        @extend %svg
+
+        path
+            @extend %transition
+            fill: $success-color
+
+    &:hover, &:focus, &:active, &.active
+        background-color: $success-color
+        color: $white-color
+
+        svg
+            path
+                fill: $white-color
+
+%blue
+    color: $blue-color;
+    border: 1px solid $blue-color
+
+    svg
+        @extend %svg
+
+        path
+            @extend %transition
+            fill: $blue-color
+
+    &:hover, &:focus, &:active, &.active
+        background-color: $blue-color
+        color: $white-color
+
+        svg
+            path
+                fill: $white-color          

@@ -1,0 +1,71 @@
++module(ticker)
+  display: inline-block
+  position: relative
+  width: 36px
+  height: 36px
+  cursor: pointer
+  font-size: 22px
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+  input
+    position: absolute
+    opacity: 0
+    cursor: pointer
+
+    &:checked ~ .checkmark .ticked
+      display: block
+
+    &:checked ~ .checkmark .ticked:after
+      display: block
+
+  .checkmark
+    position: absolute
+    top: 0
+    left: 0
+    height: 36px
+    width: 36px
+    background-color: $white-color
+    box-shadow: 0 3px 8px 0 rgba(black, .3)
+    @extend %transition
+    
+    .ticked
+      background: $success-color
+      height: 100px
+      position: relative
+      width: 20px
+      display: none
+      margin-top: $spacing-unit/3
+      transform: scale(0.2) rotate(-45deg)
+      transform-origin: top center
+      border-radius: 10px
+
+      &:after
+        background: $success-color
+        content: ""
+        height: 20px
+        left: -40px
+        position: absolute
+        top: 40px
+        width: 100px
+        border-radius: 10px
+
+  &:hover, &:active, &:focus
+    .checkmark
+      box-shadow: 0 3px 8px 0 rgba($compl-color, .3)
+  
+  &:hover
+    input ~ .checkmark .ticked
+      display: block
+      &:after
+        display: block
+
+  +variant(radio)
+    .checkmark
+        border-radius: 100%
+
+  +variant(checkbox)
+    .checkmark
+        border-radius: 20%

@@ -1,0 +1,39 @@
+.pagination
+    li
+        display: inline-block
+        text-align: center
+        text-transform: uppercase
+        text-decoration: none
+        background-color: $white-color
+        cursor: pointer    
+        color: $brand-color
+        border: none
+        border-radius: 100%
+        padding: 5px 10px
+        box-shadow: 0 3px 8px 0 rgba(black, .5)
+        min-width: 36px
+        @extend %transition
+        font-family: $title-font-family
+        
+        &:not(:last-child)
+            margin-right: $spacing-unit/2
+
+        svg
+            @extend %svg
+            display: inline-block
+            vertical-align: text-top
+
+            path
+                @extend %transition
+                fill: $brand-color
+
+        &:hover, &:focus, &:active, &.active
+            background-color: $brand-color
+            border: none
+            color: $white-color
+            a
+                color: $white-color
+
+            svg
+                path
+                    fill: $white-color
